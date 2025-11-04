@@ -25,9 +25,10 @@ interface printTeacherFunction {
 }
 
 // Implement the function
-const printTeacher: printTeacherFunction = (firstName, lastName) => {
-  return `${firstName.charAt(0)}. ${lastName}`;
-};
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
+  // const firstName = firstName.charAt(0).toUpperCase();
+  return `${firstName}. ${lastName}`;
+}
 
 
 // Describes what properties and methods a StudentClass instance should have
@@ -42,7 +43,7 @@ interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
 }
 
-class StudentClass implements StudentClassInterface {
+class StudentClass {
   firstName: string;
   lastName: string;
 
@@ -68,4 +69,4 @@ console.log(student1.workOnHomework());
 
 
 console.log(teacher3);
-console.log(printTeacher("John", "Doe"));
+console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
