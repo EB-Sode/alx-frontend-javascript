@@ -44,7 +44,7 @@ class Teacher implements TeacherInterface {
 
 // Define the createEmployee function
 function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === "number" && salary < 500) {
+  if ( salary < 500 ) {
     return new Teacher();
   } else {
     return new Director();
@@ -63,9 +63,9 @@ function executeWork(employee: Director | Teacher): string {
   }
 }
 
-const subjects: "Math" | "History" = "Math";
+type Subjects = "Math" | "History";
 
-function teachClass(todayClass: "Math" | "Histroy"): string {
+function teachClass(todayClass: Subjects): string {
   if (todayClass === "Math"){
     return 'Teaching Math';
   }
