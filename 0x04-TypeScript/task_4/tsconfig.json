@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",                    // Modern JS output
+    "module": "es6",                    // Works well with Webpack
+    "outDir": "./dist",                 // Where compiled files go
+    "sourceMap": true,                  // For debugging in browser
+    "strict": true,                     // Enforces safer TypeScript checks
+    "noImplicitAny": true,              // Disallow variables without types
+    "moduleResolution": "node",         // Ensures imports work correctly
+    "esModuleInterop": true,            // Allows default import syntax
+    "allowJs": true,                    // Allows mixing JS + TS files
+    "skipLibCheck": true,               // Speeds up build
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["js/**/*"],               // 👈 tells TS to look inside js/ folder
+  "exclude": ["node_modules", "dist"]   // skip unnecessary folders
+}
